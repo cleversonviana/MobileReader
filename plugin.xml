@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.lke.plugin.MobileReaderPlugin"
+      version="0.1.0">
+    <name>MobileReaderPlugin</name>
+    <description>Mobile Reader Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,Mobile Reader</keywords>
+
+
+    <js-module src="www/mobilereader.js" name="mobilereader">
+        <clobbers target="window.mobilereader" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MobileReaderPlugin">
+                <param name="android-package" value="com.lke.plugin.MobileReaderPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/MobileReaderPlugin.java" target-dir="src/com/lke/plugin" />      
+        <source-file src="libs/mobilereader-api.jar" target-dir="libs" />      
+
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+     </platform>          
+</plugin>
