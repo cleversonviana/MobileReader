@@ -7,7 +7,7 @@ Install
 ========================================
 Assuming the PhoneGap CLI is installed, from the command line run:
 
-cordova plugin add https://github.com/leitzsin360/MobileReaderPlugin
+cordova plugin add https://github.com/cleversonviana/MobileReader.git
 
 add following uses-permission in file AndroidManifest.xml:
 
